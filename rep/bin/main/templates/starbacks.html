@@ -1,0 +1,31 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script src="https://unpkg.com/vue@2.5.17"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <title>StarBacks</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="item in items" :key="item.name" >
+                    {{ item.name }}の個数：<input type="number" v-model="item.quantity" min="0" />
+                </li>
+            </ul>    
+            <div :style="errorMessageStyle">
+                <p>
+                    小計：{{ totalPrice | numberWithDelimiter}}円
+                </p>
+                <p>
+                    合計（税込）：{{ totalPriceWithTax | numberWithDelimiter }}円
+                </p>
+                <p v-show="!canBuy">
+                    {{ 1000 | numberWithDelimiter}} 円以上からご購入いただけます。
+                </p>
+            </div>
+        </div>
+        <button id="b-button" v-bind:title="loggedInButton" v-bind:disabled="!canBuy">購入</button>
+    </body>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/index.js"></script>
+ </html>
