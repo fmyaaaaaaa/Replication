@@ -1,10 +1,12 @@
 <template>
-    <div id="#Sidebar-left" class="left">
-        <ul>
-            <li class="none" v-for="content in contents" v-bind:key="content.id">
-                <popup-anchor :text="content.name" :contents-key="content.contentKey"/>
-            </li>
-        </ul>
+    <div id="#Sidebar-left" class="sidebar">
+        <div class="left">
+            <ul>
+                <li v-for="content in contents" v-bind:key="content.id">
+                    <popup-anchor :text="content.name" :contents-key="content.contentKey"/>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -39,16 +41,23 @@ export default {
 }
 </script>
 
-<style scoped>
-.left {
-    height: 100%;
-    width: 5%;
-    top: 20;
-    float: left;
-    background-color: bisque;
-}
-.none{
-    list-style: none;
+<style lang="scss" scoped>
+.sidebar {
+    .left {
+        font-size: 15px;
+        height: 800px;
+        width: 120px;
+        float: left;
+        padding-left: 0%;
+        background-color: white;
+    }
+    * ul {
+        list-style: none;
+        padding-left: 15px;
+    }
+    * li {
+        margin-bottom: 25px;
+    }
 }
 </style>
 
