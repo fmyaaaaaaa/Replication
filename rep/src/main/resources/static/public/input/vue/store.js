@@ -6,7 +6,6 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         contents: [
-            { name: "mainContent", isShow: true },
             { name: "subContent1", isShow: false },
             { name: "subContent2", isShow: false },
             { name: "subContent3", isShow: false }
@@ -19,11 +18,15 @@ const store = new Vuex.Store({
         }
     },
     getters: {
+        isShowSubContents: (state) => {
+            const isShow = state.contents.find(content => content.isShow)
+            return isShow === "undifined" || !isShow ? false : true
+        },
         getContentState: (state) => (contentsKey) => {
             return state.contents.find(content => content.name === contentsKey)
         },
         getCurrentContent: (state) => {
-            return state.contents.find(content => content.isShow)
+            return state.contents.find(content => content.isShow).name
         }
     }
 })

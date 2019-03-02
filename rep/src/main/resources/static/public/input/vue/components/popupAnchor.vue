@@ -13,8 +13,10 @@ export default {
     },
     methods: {
         onClickAnchor () {
-            const currentContent = this.$store.getters.getCurrentContent.name;
-            this.$store.commit('changeContentState', { contentsKey: currentContent })
+            const isShowSubContents = this.$store.getters.isShowSubContents;
+            if(isShowSubContents) {
+                this.$store.commit('changeContentState', { contentsKey: this.$store.getters.getCurrentContent })
+            }
             this.$store.commit('changeContentState', { contentsKey: this.contentsKey })
         }
     }

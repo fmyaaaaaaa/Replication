@@ -1,12 +1,12 @@
 <template>
     <div id="contents">
         <div class="main">
-            <div v-if="this.$store.getters.getContentState('mainContent').isShow"></div>
+            <div></div>
         </div>
-        <div v-if="this.$store.getters.getContentState('subContent1').isShow" class="sub">
+        <div v-if="this.$store.getters.isShowSubContents" class="sub">
             <Cafe v-if="this.$store.getters.getContentState('subContent1').isShow"></Cafe>
-            <!-- <div v-if="this.$store.getters.getContentState('subContent2').isShow">Sub Content2</div>
-            <div v-if="this.$store.getters.getContentState('subContent3').isShow">Sub Content3</div> -->
+            <div v-if="this.$store.getters.getContentState('subContent2').isShow">Sub Content2</div>
+            <div v-if="this.$store.getters.getContentState('subContent3').isShow">Sub Content3</div>
         </div>
     </div>
 </template>
@@ -20,8 +20,7 @@ export default {
         return this.$store.state.contents
     },
     mounted: function () {
-        console.log(this.$store.getters.getCurrentContent)
-        console.log(this.$store.getters.getContentState('mainContent').isShow)
+        console.log(this.$store.getters.isShowSubContents)
     },
     components: {
         Page,
