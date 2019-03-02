@@ -16,15 +16,15 @@ export default {
             contents: [
                 {
                     id: 1,
-                    name: "Starbucks Rewards™"
+                    name: "Replication Rewards"
                 },
                 {
                     id: 2,
-                    name: "Starbucks Card™"
+                    name: "Replication Card"
                 },
                 {
                     id: 3,
-                    name: "Mobile StarbucksCard"
+                    name: "Mobile ReplicationCard"
                 },
                 {
                     id: 4,
@@ -36,11 +36,11 @@ export default {
                 },
                 {
                     id: 6,
-                    name: "Starbucks eGift"
+                    name: "Replication eGift"
                 },
                 {
                     id: 7,
-                    name: "My Starbucks"
+                    name: "My Replication"
                 },
                 {
                     id: 8,
@@ -48,7 +48,7 @@ export default {
                 },
                 {
                     id: 9,
-                    name: "How to Starbucks"
+                    name: "How to Replication"
                 }
             ]
         }

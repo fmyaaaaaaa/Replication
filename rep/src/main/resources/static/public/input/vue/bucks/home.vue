@@ -1,6 +1,6 @@
 <template>
     <div id="home">
-        <Header/>
+        <!-- <Header/> -->
         <sidebar-left/>
         <sidebar-right/>
         <Body />
