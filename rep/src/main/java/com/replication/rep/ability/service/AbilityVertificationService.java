@@ -2,20 +2,22 @@ package com.replication.rep.ability.service;
 
 import java.util.List;
 
-import com.replication.rep.ability.domain.model.AbilityVerification;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-public interface AbilityVertificationService {
+import com.replication.rep.ability.domain.model.AbilityVerification;
+import com.replication.rep.ability.domain.repository.AbilityRepository;
+
+@Service
+@Transactional
+public class AbilityVertificationService {
 	
-	/**
-	 * PKに一致するAbilityVerificationを取得
-	 * @param id
-	 * @return
-	 */
-	AbilityVerification get(Integer id);
-	
-	/**
-	 * AbilityVerificationの全件取得
-	 * @return
-	 */
-	List<AbilityVerification> selectAll();	
+	@Autowired
+	AbilityRepository abilityRepository;
+
+	public List<AbilityVerification> selectAll() {
+		return abilityRepository.findAll();
+	}
+
 }

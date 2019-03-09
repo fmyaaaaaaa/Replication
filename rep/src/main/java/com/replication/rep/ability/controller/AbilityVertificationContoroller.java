@@ -16,13 +16,7 @@ public class AbilityVertificationContoroller {
 	@Autowired
 	AbilityVertificationService abilityVertificationService;
 	
-	@RequestMapping(value = "/ability/get", method = RequestMethod.GET)
-	private AbilityVerification get(Integer id) {
-		AbilityVerification ability = abilityVertificationService.get(id);
-		return ability;
-	}
-	
-	@RequestMapping(value = "/ability/getall", method = RequestMethod.GET)
+	@RequestMapping(value = "/ability", method = RequestMethod.GET)
 	private List<AbilityVerification> selectAll() {
 		List<AbilityVerification> abilityList = abilityVertificationService.selectAll();
 		return abilityList;

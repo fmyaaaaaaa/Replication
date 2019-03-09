@@ -14,9 +14,6 @@ public class AbilityVerification {
 	
 	@Column(name="code")
 	private String code;
-	
-	@Column(name="userId")
-	private Integer userId;
 
 	@Column(name="updateTime")
 	private Timestamp updateTime;
@@ -35,14 +32,6 @@ public class AbilityVerification {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-	
-	public Integer getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Integer userId) {
-		this.userId = userId;
 	}
 
 	public Timestamp getUpdateTime() {
