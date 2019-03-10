@@ -18,15 +18,18 @@ public class AbilityVertificationServiceImpl implements AbilityVertificationServ
 	@Autowired
 	AbilityRepository abilityRepository;
 	
-	Log log = LogFactory.getLog(AbilityVertificationServiceImpl.class);
+	/** Log */
+	private Log log = LogFactory.getLog(AbilityVertificationServiceImpl.class);
 
 	@Override
 	public AbilityVerification get(Integer id) {
+		log.info("AbilityVerification get:" + id);
 		return abilityRepository.getOne(id);
 	}
 	
 	@Override
 	public List<AbilityVerification> selectAll() {
+		log.info("AbilityVerification getAll");
 		return abilityRepository.findAll();
 	}
 }
