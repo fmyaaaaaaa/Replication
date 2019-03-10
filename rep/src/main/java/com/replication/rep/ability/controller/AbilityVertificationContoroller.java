@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.replication.rep.ability.domain.model.AbilityVerification;
 import com.replication.rep.ability.service.AbilityVertificationService;
+import com.replication.rep.cache.CacheManager;
 
 @RestController
 public class AbilityVertificationContoroller {
@@ -16,9 +17,12 @@ public class AbilityVertificationContoroller {
 	@Autowired
 	AbilityVertificationService abilityVertificationService;
 	
+	@Autowired
+	CacheManager cacheManager;
+	
 	@RequestMapping(value = "/ability/get", method = RequestMethod.GET)
-	private AbilityVerification get(Integer id) {
-		AbilityVerification ability = abilityVertificationService.get(id);
+	private AbilityVerification get(String code) {
+		AbilityVerification ability = cacheManager.getAbilityVerification(code);
 		return ability;
 	}
 	
